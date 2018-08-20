@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Example</title>
+	</head>
+
+	<body>
+		<p><br></p>
+		<div idstyle="float:left">
+			<form name="embc" action="example.html" method="get">
+				<p>
+					<input type="submit" name="args" value="get_value_m" 
+					onclick="window.location.reload()"/><br>
+					~value_m~
+				</p>
+				</form>
+			<p><br><hr><br></p>	
+			<button type="button" onclick="example()">Click to Change Content</button>
+			<p style="color:~colour(0)~">color 0</p>
+			<p style="color:~colour(1)~">color 1</p>
+		</div>
+
+		<script>
+			function example() {
+				var url = "example.html?args=Update";
+				var http = new XMLHttpRequest();
+				http.open("GET", url, true);
+				http.send();
+				window.location.href = "example.html";
+			}
+		</script>
+
+	</body>
+</html>
